@@ -1,14 +1,10 @@
 import "./App.css";
-import ThemeSwitcher from "./Helpers/ThemeSwitcher";
+import Navbar from "./component/Navbar";
 
 function App() {
   return (
     <>
-      <div className="bg-white dark:bg-gray-900">
-        <div className=" w-screen flex flex-row content-between">
-          <ThemeSwitcher />
-        </div>
-      </div>
+      <Navbar />
     </>
   );
 }
