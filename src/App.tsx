@@ -1,10 +1,13 @@
 import "./App.css";
+import ThemeSwitcher from "./Helpers/ThemeSwitcher";
 
 function App() {
   return (
     <>
-      <div className="text-[82px] bg-blue-100 text-black rounded-[29px] p-[12px]">
-        Tailwind
+      <div className="bg-white dark:bg-gray-900">
+        <div className=" w-screen flex flex-row content-between">
+          <ThemeSwitcher />
+        </div>
       </div>
     </>
   );
