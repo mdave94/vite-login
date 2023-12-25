@@ -3,7 +3,7 @@ import ThemeSwitcher from "../Helpers/ThemeSwitcher";
 const Navbar = () => {
   return (
     <>
-      <div className="bg-white dark:bg-gray-900">
+      <div className="bg-white dark:bg-gray-900 border-b dark:border-gray-50">
         <div className=" w-screen p-2 flex flex-row justify-between">
           <div className="">
             <ThemeSwitcher />

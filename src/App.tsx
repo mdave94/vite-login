@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="flex w-full h-screen justify-center items-center rounded-2xl content-center">
+      <div className="flex w-full h-screen justify-center items-center dark:bg-gray-900 content-center">
         <LoginForm />
       </div>
     </>
