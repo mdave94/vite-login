@@ -13,6 +13,7 @@
 }
 
 body {
+  color: black;
   cursor: default;
   margin: 0;
   display: flex;
