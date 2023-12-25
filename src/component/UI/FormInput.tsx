@@ -1,14 +1,9 @@
-type FormInputProps = {
-  text: string;
-  onClick: any;
-};
+type FormInputProps = {};
 
-const FormInput = ({ text, onClick }: FormInputProps) => {
+const FormInput = () => {
   return (
     <>
-      <div className="border-2" onClick={onclick}>
-        {text}
-      </div>
+      <div className="border">Your name</div>
     </>
   );
 };
