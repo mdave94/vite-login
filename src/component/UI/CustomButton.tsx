@@ -7,7 +7,12 @@ type CustomButtonProps = {
 const CustomButton = ({ title, disabled }: CustomButtonProps) => {
   return (
     <>
-      <button className="w-3/4 text-white font-bold bg-blue-500 p-2 rounded-md hover:bg-blue-600">
+      <button
+        disabled={disabled}
+        className={`w-3/4 ${
+          disabled && `disabled:opacity-40`
+        } text-white font-bold bg-blue-500 p-2 rounded-md hover:bg-blue-600`}
+      >
         {title}
       </button>
     </>

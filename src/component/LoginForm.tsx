@@ -53,7 +53,7 @@ const LoginForm = () => {
           </div>
           {error && <p className="text-red-500"> cannot be empty </p>}
 
-          <CustomButton title="Log in" />
+          <CustomButton disabled={error} title="Log in" />
         </div>
       </form>
     </>
