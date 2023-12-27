@@ -13,10 +13,12 @@
 }
 
 body {
+  color: black;
   cursor: default;
   margin: 0;
   display: flex;
   place-items: center;
+  background-color: rgb(241, 241, 241);
 }
 
 @media (prefers-color-scheme: light) {
