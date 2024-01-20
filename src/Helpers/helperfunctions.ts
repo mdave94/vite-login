@@ -2,7 +2,12 @@
 export const emailIsOk = (email: string) => {
   if (!email) return false;
 
-  if (isLongenough(email) && email.includes("@") && email.includes(".")) {
+  if (
+    isLongenough(email.trim()) &&
+    email.includes("@") &&
+    email.includes(".") &&
+    !email.includes(" ")
+  ) {
     return true;
   } else {
     return false;
