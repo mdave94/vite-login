@@ -1,7 +1,7 @@
 //returns true if everything is ok
 export const emailIsOk = (email: string) => {
   if (!email) return false;
-  console.log(email);
+
   if (isLongenough(email) && email.includes("@") && email.includes(".")) {
     return true;
   } else {
