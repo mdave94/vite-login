@@ -1,22 +1,28 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import FormInput from "./UI/FormInput";
 import CustomButton from "./UI/CustomButton";
+import { emailIsOk, passwordIsOk } from "../Helpers/helperfunctions";
 
 const LoginForm = () => {
-  const [name, setName] = useState<string>("");
-  const [error, setError] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [isEmpty, setIsEmpty] = useState<boolean>(true);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+  useEffect(() => {
+    setIsEmpty(false);
+    if (!emailIsOk(email) || !passwordIsOk(password)) setIsEmpty(true);
+  }, [email, password]);
+
+  const setEmailHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const setPasswordHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!name.trim()) {
-      setError(true);
-    } else {
-      setError(false);
-    }
   };
 
   return (
@@ -29,31 +35,31 @@ const LoginForm = () => {
           <div className="flex flex-col justify-center align-middle items-center ">
             <div className="mb-8">
               <FormInput
-                value={name}
-                name={name}
+                value={email}
+                name={email}
                 placeholder="Your email"
                 type="email"
                 htmlFor="email"
                 label="Your Email"
-                onChange={handleChange}
+                onChange={setEmailHandler}
               />
             </div>
 
             <div className="mb-8">
               <FormInput
-                value={name}
-                name={name}
+                value={password}
+                name={password}
                 placeholder="Your password"
                 type="password"
                 htmlFor="password"
                 label="Password"
-                onChange={handleChange}
+                onChange={setPasswordHandler}
               />
             </div>
+            <div className="w-[300px]">
+              <CustomButton disabled={isEmpty} title="Log in" />
+            </div>
           </div>
-          {error && <p className="text-red-500"> cannot be empty </p>}
-
-          <CustomButton disabled={error} title="Log in" />
         </div>
       </form>
     </>
